@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="500" style="border: 1px solid black"></canvas>
+    <script>
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        canvas.style.backgroundColor = "skyblue";
+
+        function createDom(x, y, r, color){
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(x, y, r, Math.PI, 2 * Math.PI);
+            // ctx.lineWidth = r / 10;
+            ctx.fill();
+            // ctx.stroke();
+        }
+
+        createWall(canvas.width / 2 - 500, canvas.height / 2 + 150, 1000, 150, "green")
+
+        createDom(canvas.width / 2 - (2 * 100), canvas.height / 2 - 100, 35, "green");
+        createDom(canvas.width / 2, canvas.height / 2, 100, "green");
+        createDom(canvas.width / 2 + (2 * 100), canvas.height / 2 - 100, 35, "green");
+
+        createWall(canvas.width / 2 - 275, canvas.height / 2 + 200, 550, 20, "brown");
+        createWall(canvas.width / 2 - 300, canvas.height / 2 + 220, 600, 20, "brown");
+
+        function createWall(x, y, w, h, color){
+            ctx.beginPath();
+            ctx.rect(x, y, w, h);
+            ctx.fillStyle = color;
+            ctx.fill();
+            // ctx.lineWidth = w/10;
+            // ctx.stroke();
+            ctx.fill();
+        }
+
+        createWall(canvas.width / 2 - 100, canvas.height / 2, 200, 200, "yellow");
+        createWall(canvas.width / 2 - 250, canvas.height / 2, 150, 200, "orange");
+        createWall(canvas.width / 2 + 100, canvas.height / 2, 150, 200, "orange");
+        createWall(canvas.width / 2 + 2 * 83, canvas.height / 2 - 100, 68, 100, "yellow");
+        createWall(canvas.width / 2 - 2 * 117, canvas.height / 2 - 100, 68, 100, "yellow");
+
+        createDom(canvas.width / 2, canvas.height / 2 + 100, 50, "red");
+        createWall(canvas.width / 2 - 50, canvas.height / 2 + 100, 100, 100, "red");
+
+        createDom(canvas.width / 2 - 175, canvas.height / 2 + 100, 35, "white");
+        createWall(canvas.width / 2 - 210, canvas.height / 2 + 100, 70, 100, "white");
+
+        createDom(canvas.width / 2 + 175, canvas.height / 2 + 100, 35, "white");
+        createWall(canvas.width / 2 + 140, canvas.height / 2 + 100, 70, 100, "white");
+
+        createWall(canvas.width / 2, canvas.height / 2 - 125, 5, 30, "black");
+        createWall(canvas.width / 2 - 204, canvas.height / 2 - 155, 5, 20, "black");
+        createWall(canvas.width / 2 + 198, canvas.height / 2 - 155, 5, 20, "black");
+    </script>
+</body>
+</html>
